@@ -7,7 +7,8 @@
     "evidence": "IMDb noemt IronGlass Helios, Jupiter en Mir bij de camera- en lensspecificaties.",
     "url": "https://www.imdb.com/title/tt15239678/technical/",
     "status": "Gecontroleerd",
-    "checked": "2026-11-12T10:00:00+01:00"
+    "checked": "2026-11-12T10:00:00+01:00",
+    "sourceKind": "Lensspecificaties"
   },
   {
     "id": "tt12042730",
@@ -17,7 +18,8 @@
     "evidence": "IMDb noemt IronGlass Helios bij de camera- en lensspecificaties.",
     "url": "https://www.imdb.com/title/tt12042730/technical/",
     "status": "Gecontroleerd",
-    "checked": "2026-11-12T10:00:00+01:00"
+    "checked": "2026-11-12T10:00:00+01:00",
+    "sourceKind": "Lensspecificaties"
   },
   {
     "id": "tt15437998",
@@ -27,7 +29,8 @@
     "evidence": "IMDb noemt Ironglass Soviet MKII bij de Sony Venice 2-specificatie.",
     "url": "https://www.imdb.com/title/tt15437998/technical/",
     "status": "Gecontroleerd",
-    "checked": "2026-11-12T10:00:00+01:00"
+    "checked": "2026-11-12T10:00:00+01:00",
+    "sourceKind": "Lensspecificaties"
   },
   {
     "id": "tt13375076",
@@ -37,6 +40,7 @@
     "evidence": "IMDb noemt IronGlass Lenses bij de Sony CineAlta Venice 2-specificatie.",
     "url": "https://www.imdb.com/title/tt13375076/technical/",
     "status": "Gecontroleerd",
-    "checked": "2026-11-12T10:00:00+01:00"
+    "checked": "2026-11-12T10:00:00+01:00",
+    "sourceKind": "Lensspecificaties"
   }
 ]
