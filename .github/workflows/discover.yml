@@ -1,7 +1,5 @@
 name: Discover and publish
 on:
-  schedule:
-    - cron: '23 */6 * * *'
   workflow_dispatch:
   push:
     branches: [main]
@@ -24,6 +22,7 @@ jobs:
       - name: Test extraction and failure handling
         run: python -m unittest discover -s tests -v
       - name: Search indexed IMDb mentions
+        if: github.event_name == 'workflow_dispatch'
         env:
           BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
         run: python scripts/discover.py

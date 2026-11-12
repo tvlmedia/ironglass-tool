@@ -6,7 +6,9 @@ Automatische ontdekking van expliciete IronGlass-vermeldingen op **door zoekmach
 
 ## Automatische zoekrondes
 
-GitHub Actions draait elke 6 uur (UTC: 00:23, 06:23, 12:23 en 18:23; starttijd kan afwijken), na een push en op aanvraag via **Actions → Discover and publish → Run workflow**.
+De lokale zoekroute werkt met `python3 scripts/sync.py`: haalt de nieuwste versie op, zoekt en pusht uitsluitend de vondsten en het scanrapport. Periodieke lokale uitvoering is voorbereid maar nog niet actief: die vereist expliciete goedkeuring voor terugkerende uitvoering en openbare publicatie. De Mac en Codex moeten beschikbaar zijn bij activering.
+
+GitHub Actions publiceert na elke push. **Actions → Discover and publish → Run workflow** start daarnaast een cloudzoekpoging. In de praktijktest weigerden zoekbronnen veel verzoeken vanaf GitHub; vanaf de lokale Mac werden wel echte vermeldingen gevonden. Voor betrouwbare cloudtoegang is een ondersteunde zoek-API nodig. Er is geen actieve GitHub-cronplanning.
 
 Elke ronde doorloopt 12 algemene zoekopdrachten en 8 wisselende opdrachten voor productietypes en jaartallen. De inventaris omvat IronGlass, Iron Glass en Iron-Glass, technische specificaties, bedrijfscredits, volledige credits, shorts, muziekvideo's, tv en jaren vanaf 1990 tot en met volgend jaar. De wisselende opdrachten worden met een opgeslagen cursor over opeenvolgende rondes verdeeld. Dit is een zoekstrategie, geen claim over volledige dekking.
 

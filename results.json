@@ -42,5 +42,19 @@
     "status": "Gecontroleerd",
     "checked": "2026-11-12T10:00:00+01:00",
     "sourceKind": "Lensspecificaties"
+  },
+  {
+    "id": "tt11858890",
+    "title": "The Creator (2023)",
+    "year": "2023",
+    "type": "Onbekend",
+    "evidence": "Sony FX3, Kowa Prominar, Atlas Mercury, Ironglass Soviet and Vivitar Lenses · Sony PXW-FX9, Kowa Prominar, Atlas Mercury, Ironglass Soviet and Vivitar Lenses · Laboratory · FotoKem Creative Services, Burbank (CA), USA(color, digital intermediate) FotoKem nextLAB(mobile dailies) Negative Format ·",
+    "url": "https://www.imdb.com/title/tt11858890/technical/",
+    "status": "Kandidaat",
+    "checked": "2026-11-12T10:28:41.898519+00:00",
+    "provider": "Brave Web",
+    "query": "site:imdb.com/title/ \"IronGlass\"",
+    "sourceKind": "Lensspecificaties",
+    "lastSeen": "2026-11-12T10:28:43.775476+00:00"
   }
 ]

@@ -9,6 +9,7 @@ import re
 import sys
 import time
 import urllib.parse
+import urllib.error
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from html.parser import HTMLParser
@@ -152,7 +153,7 @@ def atomic_json(path, data):
     tmp.replace(path)
 
 
-def run(root=ROOT, limit=20, delay=1.2):
+def run(root=ROOT, limit=20, delay=3):
     started = timestamp()
     status_path = root / 'scan-status.json'
     previous = json.loads(status_path.read_text()) if status_path.exists() else {}
@@ -194,8 +195,8 @@ def run(root=ROOT, limit=20, delay=1.2):
                 except Exception as exc:
                     # Never include exception URLs/headers, which could expose credentials.
                     report['status'] = 'error'
-                    report['error'] = str(exc)[:240] if isinstance(exc, (Blocked, ValueError)) else type(exc).__name__ + ': zoekbron niet beschikbaar'
-                    if isinstance(exc, Blocked):
+                    report['error'] = str(exc)[:240] if isinstance(exc, (Blocked, ValueError)) else f'HTTP {exc.code}: zoekbron weigert het verzoek' if isinstance(exc, urllib.error.HTTPError) else type(exc).__name__ + ': zoekbron niet beschikbaar'
+                    if isinstance(exc, Blocked) or isinstance(exc, urllib.error.HTTPError) and exc.code in (403, 429):
                         disabled.add(provider)
                 reports.append(report)
                 print(f'{provider}: {report["status"]}, {report["matches"]} matches — {query}', flush=True)
@@ -208,13 +209,14 @@ def run(root=ROOT, limit=20, delay=1.2):
         if len(disabled) == len(providers):
             break
     errors = sum(r['status'] == 'error' for r in reports)
-    state = 'ok' if hits and not errors else 'partial' if hits else 'no_matches' if successful else 'blocked'
+    state = 'ok' if hits and not errors else 'partial' if hits else 'blocked' if errors else 'no_matches'
     status = {'state': state, 'startedAt': started, 'finishedAt': timestamp(),
               'lastSuccessfulAt': timestamp() if hits else previous.get('lastSuccessfulAt'),
               'queriesPlanned': len(selected), 'queriesAttempted': len({r['query'] for r in reports}),
               'requestsSucceeded': successful, 'errors': errors, 'matchedTitles': len(hits), 'newTitles': len(added),
               'totalTitles': len(by_id), 'providers': providers,
               'nextCursor': (cursor + take) % len(extra), 'queryInventory': len(common) + len(extra),
+              'runner': 'GitHub Actions' if os.environ.get('GITHUB_ACTIONS') else 'Lokale scanner',
               'coverage': 'Zoekmachine-indexen; geen volledige IMDb-scan. Nul vondsten betekent niet dat er geen vermeldingen zijn.',
               'reports': reports}
     atomic_json(root / 'results.json', list(by_id.values()))
