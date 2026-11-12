@@ -1,8 +1,190 @@
 {
-  "state": "pending",
-  "queriesAttempted": 0,
+  "state": "blocked",
+  "startedAt": "2026-11-12T10:23:06.460331+00:00",
+  "finishedAt": "2026-11-12T10:23:33.897038+00:00",
+  "lastSuccessfulAt": null,
   "queriesPlanned": 20,
+  "queriesAttempted": 20,
+  "requestsSucceeded": 0,
+  "errors": 21,
+  "matchedTitles": 0,
   "newTitles": 0,
-  "providers": [],
-  "reports": []
+  "totalTitles": 4,
+  "providers": [
+    "DuckDuckGo",
+    "Bing RSS"
+  ],
+  "nextCursor": 8,
+  "queryInventory": 100,
+  "coverage": "Zoekmachine-indexen; geen volledige IMDb-scan. Nul vondsten betekent niet dat er geen vermeldingen zijn.",
+  "reports": [
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\"",
+      "provider": "DuckDuckGo",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekmachine vraagt een CAPTCHA; deze bron wordt deze ronde overgeslagen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\" \"technical\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\" \"company credits\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\" \"full credits\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron Glass\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron Glass\" \"technical\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron Glass\" \"company credits\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron Glass\" \"full credits\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron-Glass\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron-Glass\" \"technical\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron-Glass\" \"company credits\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron-Glass\" \"full credits\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\" \"Short\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\" \"Music Video\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\" \"TV Series\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\" \"TV Episode\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\" \"Documentary\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\" \"Video\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron Glass\" \"Short\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron Glass\" \"Music Video\"",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    }
+  ]
 }
