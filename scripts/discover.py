@@ -11,6 +11,7 @@ import time
 import urllib.parse
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
+from html.parser import HTMLParser
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from app import fetch, Results
 ROOT = Path(__file__).resolve().parents[1]
@@ -74,11 +75,62 @@ class Blocked(Exception):
     pass
 
 
+class BraveResults(HTMLParser):
+    """Read visible web-result cards; ignore scripts and unrelated page content."""
+    def __init__(self):
+        super().__init__()
+        self.rows = []
+        self.depth = 0
+        self.block = None
+        self.capture = None
+        self.current = None
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        classes = attrs.get('class', '').split()
+        if tag == 'div':
+            self.depth += 1
+            if 'snippet' in classes and attrs.get('data-type') == 'web':
+                self.block = self.depth
+                self.current = {'url': '', 'title': '', 'description': ''}
+                self.rows.append(self.current)
+            if self.current is not None:
+                if 'search-snippet-title' in classes:
+                    self.current['title'] = attrs.get('title', '')
+                if 'content' in classes:
+                    self.capture = self.depth
+        if tag == 'a' and self.current is not None and not self.current['url']:
+            self.current['url'] = attrs.get('href', '')
+
+    def handle_endtag(self, tag):
+        if tag != 'div':
+            return
+        if self.capture == self.depth:
+            self.capture = None
+        if self.block == self.depth:
+            self.block = None
+            self.current = None
+            self.capture = None
+        self.depth = max(0, self.depth - 1)
+
+    def handle_data(self, data):
+        if self.capture is not None and self.current is not None:
+            self.current['description'] += data
+
+
 def provider_search(provider, query, page=0):
     if provider == 'Brave':
         key = os.environ['BRAVE_SEARCH_API_KEY']
         data = json.loads(fetch('https://api.search.brave.com/res/v1/web/search?' + urllib.parse.urlencode({'q': query, 'count': 20, 'offset': page}), {'X-Subscription-Token': key, 'Accept': 'application/json'}))
         return data.get('web', {}).get('results', [])
+    if provider == 'Brave Web':
+        content = fetch('https://search.brave.com/search?' + urllib.parse.urlencode({'q': query, 'source': 'web'}))
+        parser = BraveResults(); parser.feed(content)
+        if not parser.rows:
+            if 'No results found' in content or 'No search results' in content:
+                return []
+            raise Blocked('Geen leesbare webresultaten; mogelijk een zoekmachineblokkade.')
+        return parser.rows
     if provider == 'DuckDuckGo':
         content = fetch('https://html.duckduckgo.com/html/?' + urllib.parse.urlencode({'q': query}))
         if 'anomaly.js' in content or 'anomaly-modal' in content or 'challenge-form' in content:
@@ -108,7 +160,7 @@ def run(root=ROOT, limit=20, delay=1.2):
     cursor = int(previous.get('nextCursor', 0)) % len(extra)
     take = min(max(limit - len(common), 0), len(extra))
     selected = common[:limit] + [extra[(cursor + n) % len(extra)] for n in range(take)]
-    providers = ['Brave'] if os.environ.get('BRAVE_SEARCH_API_KEY') else ['DuckDuckGo', 'Bing RSS']
+    providers = ['Brave'] if os.environ.get('BRAVE_SEARCH_API_KEY') else ['Brave Web', 'DuckDuckGo', 'Bing RSS']
     records = json.loads((root / 'results.json').read_text())
     by_id = {r['id']: r for r in records}
     disabled = set(); reports = []; hits = set(); added = set(); successful = 0
@@ -151,6 +203,8 @@ def run(root=ROOT, limit=20, delay=1.2):
                     time.sleep(delay)
                 if provider in disabled:
                     break
+            if report.get('status') == 'ok' and report.get('matches', 0):
+                break
         if len(disabled) == len(providers):
             break
     errors = sum(r['status'] == 'error' for r in reports)

@@ -38,6 +38,14 @@ class DiscoveryTests(unittest.TestCase):
             self.assertEqual(report['newTitles'],1)
             self.assertEqual(len(data),1)
             self.assertEqual(data[0]['status'],'Kandidaat')
+    def test_brave_cards_keep_snippet_and_link_together(self):
+        parser=d.BraveResults()
+        parser.feed('<script>"Switch to traditional captcha"</script><div class="snippet" data-type="web"><div><a href="https://www.imdb.com/title/tt12345/technical/"><div class="search-snippet-title" title="Example (2024) - IMDb">Example</div></a><div class="generic-snippet"><div class="content">Camera, <strong>IronGlass</strong> lenses</div></div></div></div><div class="snippet" data-type="web"><a href="https://www.imdb.com/title/tt55555/"><div class="search-snippet-title" title="Other">Other</div></a><div class="content">No lens data</div></div>')
+        self.assertEqual(len(parser.rows),2)
+        self.assertEqual(parser.rows[0]['description'],'Camera, IronGlass lenses')
+        self.assertIsNotNone(d.extract(parser.rows[0],'q','Brave Web'))
+        self.assertIsNone(d.extract(parser.rows[1],'q','Brave Web'))
+
     def test_query_rotation(self):
         common,extra=d.query_plan(2026)
         self.assertTrue(any('1990' in q for q in extra))
