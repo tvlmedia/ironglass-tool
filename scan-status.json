@@ -1,23 +1,32 @@
 {
-  "state": "blocked",
-  "startedAt": "2026-11-12T10:23:06.460331+00:00",
-  "finishedAt": "2026-11-12T10:23:33.897038+00:00",
+  "state": "no_matches",
+  "startedAt": "2026-11-12T10:25:40.124029+00:00",
+  "finishedAt": "2026-11-12T10:26:34.936666+00:00",
   "lastSuccessfulAt": null,
   "queriesPlanned": 20,
   "queriesAttempted": 20,
-  "requestsSucceeded": 0,
-  "errors": 21,
+  "requestsSucceeded": 1,
+  "errors": 40,
   "matchedTitles": 0,
   "newTitles": 0,
   "totalTitles": 4,
   "providers": [
+    "Brave Web",
     "DuckDuckGo",
     "Bing RSS"
   ],
-  "nextCursor": 8,
+  "nextCursor": 16,
   "queryInventory": 100,
   "coverage": "Zoekmachine-indexen; geen volledige IMDb-scan. Nul vondsten betekent niet dat er geen vermeldingen zijn.",
   "reports": [
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\"",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
+    },
     {
       "query": "site:imdb.com/title/ \"IronGlass\"",
       "provider": "DuckDuckGo",
@@ -36,11 +45,27 @@
     },
     {
       "query": "site:imdb.com/title/ \"IronGlass\" \"technical\"",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
+    },
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\" \"technical\"",
       "provider": "Bing RSS",
       "page": 1,
       "matches": 0,
       "status": "error",
       "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\" \"company credits\"",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
     },
     {
       "query": "site:imdb.com/title/ \"IronGlass\" \"company credits\"",
@@ -52,11 +77,27 @@
     },
     {
       "query": "site:imdb.com/title/ \"IronGlass\" \"full credits\"",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
+    },
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\" \"full credits\"",
       "provider": "Bing RSS",
       "page": 1,
       "matches": 0,
       "status": "error",
       "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron Glass\"",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
     },
     {
       "query": "site:imdb.com/title/ \"Iron Glass\"",
@@ -68,11 +109,27 @@
     },
     {
       "query": "site:imdb.com/title/ \"Iron Glass\" \"technical\"",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron Glass\" \"technical\"",
       "provider": "Bing RSS",
       "page": 1,
       "matches": 0,
       "status": "error",
       "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron Glass\" \"company credits\"",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
     },
     {
       "query": "site:imdb.com/title/ \"Iron Glass\" \"company credits\"",
@@ -84,11 +141,27 @@
     },
     {
       "query": "site:imdb.com/title/ \"Iron Glass\" \"full credits\"",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron Glass\" \"full credits\"",
       "provider": "Bing RSS",
       "page": 1,
       "matches": 0,
       "status": "error",
       "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron-Glass\"",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
     },
     {
       "query": "site:imdb.com/title/ \"Iron-Glass\"",
@@ -100,11 +173,27 @@
     },
     {
       "query": "site:imdb.com/title/ \"Iron-Glass\" \"technical\"",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron-Glass\" \"technical\"",
       "provider": "Bing RSS",
       "page": 1,
       "matches": 0,
       "status": "error",
       "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron-Glass\" \"company credits\"",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
     },
     {
       "query": "site:imdb.com/title/ \"Iron-Glass\" \"company credits\"",
@@ -116,6 +205,14 @@
     },
     {
       "query": "site:imdb.com/title/ \"Iron-Glass\" \"full credits\"",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron-Glass\" \"full credits\"",
       "provider": "Bing RSS",
       "page": 1,
       "matches": 0,
@@ -123,7 +220,15 @@
       "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
     },
     {
-      "query": "site:imdb.com/title/ \"IronGlass\" \"Short\"",
+      "query": "site:imdb.com/title/ \"Iron Glass\" \"TV Series\"",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron Glass\" \"TV Series\"",
       "provider": "Bing RSS",
       "page": 1,
       "matches": 0,
@@ -131,7 +236,15 @@
       "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
     },
     {
-      "query": "site:imdb.com/title/ \"IronGlass\" \"Music Video\"",
+      "query": "site:imdb.com/title/ \"Iron Glass\" \"TV Episode\"",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron Glass\" \"TV Episode\"",
       "provider": "Bing RSS",
       "page": 1,
       "matches": 0,
@@ -139,7 +252,15 @@
       "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
     },
     {
-      "query": "site:imdb.com/title/ \"IronGlass\" \"TV Series\"",
+      "query": "site:imdb.com/title/ \"Iron Glass\" \"Documentary\"",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron Glass\" \"Documentary\"",
       "provider": "Bing RSS",
       "page": 1,
       "matches": 0,
@@ -147,7 +268,15 @@
       "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
     },
     {
-      "query": "site:imdb.com/title/ \"IronGlass\" \"TV Episode\"",
+      "query": "site:imdb.com/title/ \"Iron Glass\" \"Video\"",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron Glass\" \"Video\"",
       "provider": "Bing RSS",
       "page": 1,
       "matches": 0,
@@ -155,7 +284,15 @@
       "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
     },
     {
-      "query": "site:imdb.com/title/ \"IronGlass\" \"Documentary\"",
+      "query": "site:imdb.com/title/ \"IronGlass\" 1990",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
+    },
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\" 1990",
       "provider": "Bing RSS",
       "page": 1,
       "matches": 0,
@@ -163,7 +300,15 @@
       "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
     },
     {
-      "query": "site:imdb.com/title/ \"IronGlass\" \"Video\"",
+      "query": "site:imdb.com/title/ \"Iron Glass\" 1990",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron Glass\" 1990",
       "provider": "Bing RSS",
       "page": 1,
       "matches": 0,
@@ -171,7 +316,15 @@
       "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
     },
     {
-      "query": "site:imdb.com/title/ \"Iron Glass\" \"Short\"",
+      "query": "site:imdb.com/title/ \"IronGlass\" 1991",
+      "provider": "Brave Web",
+      "page": 1,
+      "matches": 0,
+      "status": "error",
+      "error": "HTTPError: zoekbron niet beschikbaar"
+    },
+    {
+      "query": "site:imdb.com/title/ \"IronGlass\" 1991",
       "provider": "Bing RSS",
       "page": 1,
       "matches": 0,
@@ -179,12 +332,20 @@
       "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
     },
     {
-      "query": "site:imdb.com/title/ \"Iron Glass\" \"Music Video\"",
-      "provider": "Bing RSS",
+      "query": "site:imdb.com/title/ \"Iron Glass\" 1991",
+      "provider": "Brave Web",
       "page": 1,
       "matches": 0,
       "status": "error",
-      "error": "Zoekbron negeerde de IMDb-filter; resultaten verworpen."
+      "error": "HTTPError: zoekbron niet beschikbaar"
+    },
+    {
+      "query": "site:imdb.com/title/ \"Iron Glass\" 1991",
+      "provider": "Bing RSS",
+      "page": 1,
+      "matches": 0,
+      "results": 10,
+      "status": "ok"
     }
   ]
 }
